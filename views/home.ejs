@@ -1,0 +1,58 @@
+<%- include('partials/head')%>
+  </head>
+  <body>
+    <%- include ('partials/nav')%>
+    <main
+      class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-4xl"
+    >
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">
+        Welcome to airbnb
+      </h2>
+      <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">
+        Registered Homes
+      </h3>
+      <div class="space-y-4">
+        <% registeredHomes.forEach(home=>{ %>
+        <div
+          class="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 rounded-r-lg p-5 shadow-sm hover:shadow-md transition-shadow duration-200"
+        >
+          <div class="flex items-start space-x-4">
+            <svg
+              class="w-6 h-6 text-red-500 shrink-0 mt-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <span class="text-sm text-gray-500 font-medium">House Name</span>
+                <span class="text-gray-800 font-semibold"><%= home.houseName %></span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm text-gray-500 font-medium">Price per Night</span>
+                <span class="text-gray-800 font-semibold">Rs <%= home.price %></span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm text-gray-500 font-medium">Ratings</span>
+                <span class="text-gray-800 font-semibold"><%= home.rating %> ⭐</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm text-gray-500 font-medium">Address</span>
+                <span class="text-gray-800 font-semibold"><%= home.address %></span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </main>
+  </body>
+</html>
