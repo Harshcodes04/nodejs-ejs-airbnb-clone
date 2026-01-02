@@ -8,15 +8,8 @@ hostRouter.get("/add-home", (req, res, next) => {
 const registeredHomes = [];
 
 hostRouter.post("/add-home", (req, res, next) => {
-  console.log(req.method, req.url, req.body);
-  console.log(
-    "Home added:",
-    req.body.houseName,
-    req.body.address,
-    req.body.price,
-    req.body.rating,
-    req.body.photoUrl
-  );
+  console.log(req.method, req.url);
+  console.log("Home added");
   registeredHomes.push({
     houseName: req.body.houseName,
     address: req.body.address,
